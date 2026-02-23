@@ -3,23 +3,22 @@ fetch("./navbar.html")
 .then((data) => {
     document.getElementById("navbar-placeholder").innerHTML = data;
     
+    // --- 1. INISIALISASI THEME (Panggil Fungsi Di Sini) ---
+    initTheme();
+
     // Ambil nama file saja, misal: index.html
     const currentLocation = window.location.pathname.split("/").pop();
     const navLinks = document.querySelectorAll(".nav-link");
 
     navLinks.forEach((link) => {
         const href = link.getAttribute("href");
-        
-        // Cek jika href sama dengan lokasi sekarang, atau jika di root diarahkan ke index.html
         if (href === currentLocation || (currentLocation === "" && href === "index.html")) {
             link.classList.add("active");
         } else {
-            // Pastikan yang lain tidak sengaja punya class active
             link.classList.remove("active");
         }
     });
 
-    // Event scroll tetap sama
     window.addEventListener("scroll", function () {
         const navbar = document.querySelector(".navbar");
         if (navbar) {
@@ -31,4 +30,40 @@ fetch("./navbar.html")
         }
     });
 });
+
+// --- 2. FUNGSI LOGIKA THEME ---
+function initTheme() {
+    const toggleBtn = document.getElementById('theme-toggle');
+    const themeIcon = document.getElementById('theme-icon');
+    const htmlElement = document.documentElement;
+
+    if (!toggleBtn) return; // Guard clause jika elemen tidak ditemukan
+
+    // Cek tema yang tersimpan
+    const savedTheme = localStorage.getItem('theme') || 'light';
+    htmlElement.setAttribute('data-theme', savedTheme);
+    updateIcon(savedTheme, themeIcon);
+
+    toggleBtn.addEventListener('click', () => {
+        let currentTheme = htmlElement.getAttribute('data-theme');
+        let newTheme = (currentTheme === 'light') ? 'dark' : 'light';
+        
+        htmlElement.setAttribute('data-theme', newTheme);
+        localStorage.setItem('theme', newTheme);
+        updateIcon(newTheme, themeIcon);
+    });
+}
+
+function updateIcon(theme, icon) {
+    if (!icon) return;
+    if (theme === 'dark') {
+        icon.setAttribute('name', 'sunny');
+        icon.style.color = '#f1c40f';
+    } else {
+        icon.setAttribute('name', 'moon');
+        icon.style.color = '#5549c3';
+    }
+}
+
+// Pastikan fungsi mengetik kamu tetap terpanggil
 document.addEventListener("DOMContentLoaded", typeText);

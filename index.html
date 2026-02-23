@@ -87,6 +87,40 @@
     border-color: var(--secondary-color);
     color: var(--secondary-color);
 }
+
+[data-theme="dark"] body{
+    background-color: var(--background-dark) !important;
+}
+[data-theme="dark"] .highlight{
+       /* Mengambil warna dari variabel :root Anda */
+       background: linear-gradient(90deg, var(--accent-color), var(--secondary-color));
+        
+        /* Trik Clipping Text */
+        -webkit-background-clip: text;
+        -webkit-text-fill-color: transparent;
+        background-clip: text;
+        color: transparent; /* Fallback jika browser tidak support webkit */
+        
+        font-weight: 800;
+       
+    
+}
+[data-theme="dark"] .prof{
+    color: var(--text-dark);
+    
+}
+[data-theme="dark"] .footer{
+    background-color: var(--ape) !important;
+    color: var(--text-dark) !important;
+}
+[data-theme="dark"] .copyright{
+    color: var(--text-dark) !important;
+}
+[data-theme="dark"] .logo-footer{
+    color: var(--text-dark) !important;
+    opacity: 0.6;
+}
+
     </style>
 </head>
 <body>
@@ -98,7 +132,7 @@
                 <h1 class="ies mb-3">
                     <span class="highlight" id="typing-text"></span><span class="cursor">|</span>
                 </h1>
-                <p class="mb-4" style="text-align: justify"> 
+                <p class="mb-4 prof" style="text-align: justify; opacity: 0.6;"> 
                     Software Engineering graduate and Computer Science student with
                     backend development experience at the Ministry of Law and Human
                     Rights (Kemenkumham). Expert in building internal management systems
@@ -107,7 +141,7 @@
                 
                 <div class="d-flex justify-content-center justify-content-md-start">
                     <a href="portfolio.html" class="btn my-work px-3 py-2">View My Work</a>
-                    <a href="contact.html" class="btn in-touch ms-3 px-3 py-2">Get In Touch</a>
+                    <a href="index.html" class="btn in-touch ms-3 px-3 py-2">Get In Touch</a>
                 </div>
             </div>
             <div class="col-md-6 order-2 order-md-2 d-flex justify-content-center mt-4 mt-md-0">
@@ -120,7 +154,7 @@
         <footer class="container-fluid mt-5 ">
             <div class="row">
                 <div class="col-12 footer d-flex flex-column align-items-center justify-content-center py-4">
-                    <h6 class="mb-2 mt-3" style="font-size: 0.9rem; opacity: 0.7; color: var(--text-color);">&copy; Copyright Khaisan All Rights Reserved</h6>
+                    <h6 class="mb-2 mt-3 copyright" style="font-size: 0.9rem; opacity: 0.7; color: var(--text-color);">&copy; Copyright Khaisan All Rights Reserved</h6>
                     <div class="linked mt-4">
                         <a href="https://www.instagram.com/khaisnn._?igsh=MXIweW4yM3hvZWhlbg==&utm_source=ig_contact_invite" target="_blank" class="logo-footer">
                             <ion-icon name="logo-instagram"></ion-icon>

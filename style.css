@@ -1,12 +1,48 @@
 @import url("https://fonts.googleapis.com/css2?family=Inter:ital,opsz,wght@0,14..32,100..900;1,14..32,100..900&family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap");
 :root {
-  --text-color: #0d0d10;
-  --background-color: #f7f6fa;
-  --primary-color: #5549c3;
-  --secondary-color: #887ee9;
-  --accent-color: #5d4ef6;
-  --apa: #ebeaef;
-}
+    /* Light Mode (Existing) */
+    --text-color: #0d0d10;
+    --background-color: #f7f6fa;
+    --primary-color: #5549c3;
+    --secondary-color: #887ee9;
+    --accent-color: #5d4ef6;
+    --apa: rgb(246, 245, 248);
+  }
+  
+  /* Dark Mode Variables */
+  [data-theme="dark"] {
+    --text-dark: #eeeef1;
+    --background-dark: #07050a;
+    --primary-dark: #483cb4;
+    --secondary-dark: #211683;
+    --accent-dark: #1709ae;
+    --ape: #131116; /* Menjadi --ape sesuai request */
+  }
+  
+  body {
+    background-color: var(--background-color);
+    color: var(--text-color);
+    transition: all 0.3s ease;
+  }
+  
+  /* Memastikan Navbar mengikuti tema */
+  [data-theme="dark"] .navbar {
+    background-color: var(--ape) !important;
+  }
+  
+  [data-theme="dark"] .nav-link, 
+  [data-theme="dark"] .navbar-brand {
+    color: var(--text-dark) !important;
+  }
+  
+  /* Style tombol toggle */
+  #theme-toggle {
+    cursor: pointer;
+    font-size: 1.5rem;
+    display: flex;
+    align-items: center;
+    color: var(--primary-color);
+  }
 
 * {
   font-family: "Inter", Roboto, sans-serif;

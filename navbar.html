@@ -1,12 +1,40 @@
-  <nav class="navbar navbar-expand-lg navbar-light bg-white sticky-top">
+  <head>
+   <style>
+    /* Menggunakan filter invert untuk mengubah ikon hitam menjadi putih */
+  [data-theme="dark"] .navbar-toggler-icon {
+    filter: invert(1) grayscale(100%) brightness(200%);
+  }
+
+  /* Opsional: Pastikan garis border toggler juga terlihat jika tidak memakai border-0 */
+  [data-theme="dark"] .navbar-toggler {
+    border-color: rgba(255, 255, 255, 0.1);
+  }
+  [data-theme="dark"] .dropdown-menu {
+    background-color: var(--background-dark);
+    
+  }
+  [data-theme="dark"] .dropdown-item {
+    color: var(--text-dark);
+    opacity: 0.8;
+  }
+   </style>
+   
+  </head>
+  <nav class="navbar navbar-expand-lg  sticky-top">
       <div class="container">
         <a class="navbar-brand fw-bold mx-3" href="index.html">Khaisan</a>
         
-        <button class="navbar-toggler border-0" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav">
-          <span class="navbar-toggler-icon"></span>
-        </button>
+        <div class="d-flex align-items-center order-lg-1 ms-auto">
+          <div id="theme-toggle" class="me-3 mx-3">
+            <ion-icon name="moon" id="theme-icon"></ion-icon>
+          </div>
     
-        <div class="collapse navbar-collapse" id="navbarNav">
+          <button class="navbar-toggler border-0 shadow-none" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav">
+            <span class="navbar-toggler-icon"></span>
+          </button>
+        </div>
+    
+        <div class="collapse navbar-collapse order-lg-2" id="navbarNav">
           <ul class="navbar-nav ms-auto gap-lg-4 text-center">
             <li class="nav-item">
               <a class="nav-link" href="index.html">Dashboard</a>
@@ -25,21 +53,21 @@
               <a class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false">
                 <span>Social Media</span>
               </a>
-              <ul class="dropdown-menu dropdown-menu-end shadow border-0">
+              <ul class="dropdown-menu dropdown-menu-end shadow border-0 ">
                 <li>
-                  <a class="dropdown-item d-flex align-items-center justify-content-center justify-content-lg-start" 
+                  <a class="dropdown-item d-flex align-items-center justify-content-center justify-content-lg-start my-2" 
                     href="https://www.instagram.com/khaisnn._?igsh=MXIweW4yM3hvZWhlbg==&utm_source=ig_contact_invite" target="_blank" rel="noopener">
                     <ion-icon name="logo-instagram" class="me-2 text-danger"></ion-icon> Instagram
                   </a>
                 </li>
                 <li>
-                  <a class="dropdown-item d-flex align-items-center justify-content-center justify-content-lg-start" 
+                  <a class="dropdown-item d-flex align-items-center justify-content-center justify-content-lg-start my-2" 
                     href="https://www.tiktok.com/@yourxsann?_r=1&_t=ZS-93mAy09SxQi" target="_blank" rel="noopener">
                     <ion-icon name="logo-tiktok" class="me-2 text-dark"></ion-icon> Tiktok
                   </a>
                 </li>
                 <li>
-                  <a class="dropdown-item d-flex align-items-center justify-content-center justify-content-lg-start" 
+                  <a class="dropdown-item d-flex align-items-center justify-content-center justify-content-lg-start my-2" 
                     href="https://www.linkedin.com/in/khaisan-ramzi-278681313?utm_source=share&utm_campaign=share_via&utm_content=profile&utm_medium=android_app" target="_blank" rel="noopener">
                     <ion-icon name="logo-linkedin" class="me-2 text-primary"></ion-icon> LinkedIn
                   </a>
@@ -56,3 +84,7 @@
     <script type="module" src="https://unpkg.com/ionicons@7.1.0/dist/ionicons/ionicons.esm.js"></script>
     <script nomodule src="https://unpkg.com/ionicons@7.1.0/dist/ionicons/ionicons.js"></script>
     <script src="script.js"></script>
+
+    <script>
+  
+    </script>

@@ -1,5 +1,103 @@
-@import url('https://fonts.googleapis.com/css2?family=Inter:ital,opsz,wght@0,14..32,100..900;1,14..32,100..900&family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap');
+@import url("https://fonts.googleapis.com/css2?family=Inter:ital,opsz,wght@0,14..32,100..900;1,14..32,100..900&family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap");
+:root {
+  --text-color: #0d0d10;
+  --background-color: #f7f6fa;
+  --primary-color: #5549c3;
+  --secondary-color: #887ee9;
+  --accent-color: #5d4ef6;
+  --apa: #ebeaef;
+}
 
-*{
-    font
+* {
+  font-family: "Inter", Roboto, sans-serif;
+}
+
+.navbar-brand,
+.nav-link {
+  font-weight: 600;
+  color: var(--text-color);
+}
+
+/* 1. Efek Garis Bawah HANYA untuk link biasa (Bukan Dropdown) */
+.nav-link:not(.dropdown-toggle) {
+  position: relative;
+  transition: color 0.3s ease;
+}
+
+/* .nav-link:not(.dropdown-toggle).active::after,
+.nav-link:not(.dropdown-toggle):hover::after {
+  content: "";
+  position: absolute;
+  width: 100%;
+  height: 2px;
+  background-color: var(--primary-color);
+  bottom: -5px;
+  left: 0;
+  transition: 0.3s;
+} */
+
+/* 2. Pastikan Social Media (Dropdown) tidak punya efek garis bawah agar tidak geser */
+.nav-link.dropdown-toggle::after {
+  content: none !important; /* Hapus garis bawah custom */
+}
+
+
+@keyframes blink {
+  0%,
+  50%,
+  100% {
+    opacity: 1;
+  }
+  25%,
+  75% {
+    opacity: 0;
+  }
+}
+
+@media (max-width: 768px) {
+  .ies {
+    font-size: 1.5rem;
+  }
+  .navbar-nav .nav-link {
+    padding: 15px 0;
+    
+  }
+  .dropdown-menu {
+    text-align: center;
+    background-color: #f9f9f9;
+  }
+}
+
+.dropdown-menu {
+  animation: fadeIn 0.4s ease-in-out;
+}
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+    transform: translateY(10px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+/* Style dasar untuk semua nav-link */
+.navbar-nav .nav-link {
+    font-weight: 600;
+    color: var(--text-color);
+    opacity: 0.6; /* Default pudar untuk semua link */
+    transition: opacity 0.3s ease, color 0.3s ease;
+}
+
+/* Style khusus untuk nav-link yang aktif atau sedang di-hover */
+.navbar-nav .nav-link.active,
+.navbar-nav .nav-link:hover {
+    opacity: 1; /* Terang kembali */
+    color: var(--primary-color);
+}
+
+/* Pastikan dropdown toggle tetap terlihat oke */
+.nav-link.dropdown-toggle.show {
+    opacity: 1;
 }

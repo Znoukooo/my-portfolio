@@ -10,63 +10,83 @@
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
     <link href="https://fonts.googleapis.com/css2?family=Inter:ital,opsz,wght@0,14..32,100..900;1,14..32,100..900&family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap" rel="stylesheet" />
     <link rel="stylesheet" href="assets/bootstrap/css/bootstrap.min.css" />
-
+    <link rel="stylesheet" href="style.css">
     <style>
-        :root {
-            --text-color: #05050a;
-            --background-color: #f4f5fb;
-            --primary-color: #3940d0;
-            --secondary-color: #767cef;
-            --accent-color: #424bfa;
-        }
 
-        * { font-family: "Inter", Roboto, sans-serif; }
-
-        .navbar-brand, .nav-link {
-            font-weight: 600;
-            color: var(--text-color);
-        }
-
-        /* 1. Efek Garis Bawah HANYA untuk link biasa (Bukan Dropdown) */
-        .nav-link:not(.dropdown-toggle) {
-            position: relative;
-            transition: color 0.3s ease;
-        }
-
-        .nav-link:not(.dropdown-toggle).active::after,
-        .nav-link:not(.dropdown-toggle):hover::after {
-            content: "";
-            position: absolute;
-            width: 100%;
-            height: 2px;
-            background-color: var(--primary-color);
-            bottom: -5px;
-            left: 0;
-            transition: 0.3s;
-        }
-
-        /* 2. Pastikan Social Media (Dropdown) tidak punya efek garis bawah agar tidak geser */
-        .nav-link.dropdown-toggle::after {
-            content: none !important; /* Hapus garis bawah custom */
-        }
+        
 
         /* Profil & Typing */
-        .profile-img { border-radius: 25px; width: 100%; max-width: 300px; height: auto; }
-        .ies { font-weight: 800; }
-        .grayscale-hover { filter: grayscale(100%); transition: filter 0.5s ease-in-out; cursor: pointer; }
-        .grayscale-hover:hover { filter: grayscale(0%); }
-        .cursor { display: inline-block; background-color: var(--primary-color); width: 2px; margin-left: 4px; animation: blink 1s infinite; height: 1.2em; vertical-align: bottom; }
+        .profile-img { 
+            border-radius: 10px; 
+            width: 100%; 
+            max-width: 300px; 
+            height: auto; 
+        }
+        .ies { 
+            font-weight: 800; 
+        }
+        .grayscale-hover { 
+            filter: grayscale(100%); 
+            transition: filter 0.5s ease-in-out; 
+            cursor: pointer; 
+        }
+        .grayscale-hover:hover { 
+            filter: grayscale(0%); 
+        }
+        .cursor { 
+            display: inline-block; 
+            background-color: var(--primary-color); 
+            width: 2px; margin-left: 4px; 
+            animation: blink 1s infinite; 
+            height: 1.2em; 
+            vertical-align: bottom; }
 
-        @keyframes blink { 0%, 50%, 100% { opacity: 1; } 25%, 75% { opacity: 0; } }
-
-        @media (max-width: 768px) {
-            .ies { font-size: 1.5rem; }
-            .navbar-nav .nav-link { padding: 10px 0; border-bottom: 1px solid #eee; }
-            .dropdown-menu { text-align: center; background-color: #f9f9f9; }
+        @keyframes blink { 
+            0%, 50%, 100% { 
+                opacity: 1; 
+            } 25%, 75% { 
+                opacity: 0; 
+            } 
         }
 
-        .dropdown-menu { animation: fadeIn 0.3s ease-in-out; }
-        @keyframes fadeIn { from { opacity: 0; transform: translateY(10px); } to { opacity: 1; transform: translateY(0); } }
+
+    
+      
+.footer {
+    background-color: var(--apa);
+    border-radius: 10px; /* Membuat sudut card melengkung halus */
+}
+
+.logo-footer {
+    color: var(--text-color) !important; /* Supaya icon jadi putih di atas background biru */
+    margin: 0 10px;
+    text-decoration: none;
+    font-size: 22px;
+    transition: 0.3s;
+}
+
+.logo-footer:hover {
+    opacity: 0.7;
+    transform: translateY(-3px); /* Efek melayang sedikit saat hover */
+}
+.my-work{
+    background-color: var(--primary-color);
+    color: var(--background-color);
+
+}
+.my-work:hover{
+    background-color: var(--accent-color);
+    color: var(--background-color);
+
+}
+.in-touch{
+    border-color: var(--primary-color);
+    color: var(--primary-color);
+}
+.in-touch:hover{
+    border-color: var(--secondary-color);
+    color: var(--secondary-color);
+}
     </style>
 </head>
 <body>
@@ -74,21 +94,20 @@
 
     <div class="container">
         <div class="row align-items-center mt-2 mt-lg-5 p-3">
-            <div class="col-md-6 order-1 order-md-1 text">
+            <div class="col-md-6 order-1 order-md-1 text text-center text-md-start">
                 <h1 class="ies mb-3">
                     <span class="highlight" id="typing-text"></span><span class="cursor">|</span>
                 </h1>
-                <p class="mb-4" style="text-align: justify">
+                <p class="mb-4" style="text-align: justify"> 
                     Software Engineering graduate and Computer Science student with
                     backend development experience at the Ministry of Law and Human
                     Rights (Kemenkumham). Expert in building internal management systems
-                    using PHP, MySQL, and Git to improve operational efficiency. Possess
-                    strong problem-solving skills and accustomed to working in technical
-                    teams. Committed to applying web development and system design
-                    expertise to support the scalability of corporate IT infrastructure.
+                    using PHP, MySQL, and Git to improve operational efficiency.
                 </p>
+                
                 <div class="d-flex justify-content-center justify-content-md-start">
-                    <a href="about.php" class="btn btn-outline-dark">Learn More</a>
+                    <a href="#" class="btn my-work px-3 py-2">View My Work</a>
+                    <a href="#" class="btn in-touch ms-3 px-3 py-2">Get In Touch</a>
                 </div>
             </div>
             <div class="col-md-6 order-2 order-md-2 d-flex justify-content-center mt-4 mt-md-0">
@@ -97,6 +116,51 @@
         </div>
     </div>
 
+
+        <footer class="container-fluid mt-5 ">
+            <div class="row">
+                <div class="col-12 footer d-flex flex-column align-items-center justify-content-center py-4">
+                    <h6 class="mb-2 mt-3" style="font-size: 0.9rem; opacity: 0.7; color: var(--text-color);">&copy; Copyright Khaisan All Rights Reserved</h6>
+                    <div class="linked mt-4">
+                        <a href="https://instagram.com/username_kamu" target="_blank" class="logo-footer">
+                            <ion-icon name="logo-instagram"></ion-icon>
+                        </a>
+                        <a href="https://instagram.com/username_kamu" target="_blank" class="logo-footer">
+                            <ion-icon name="logo-tiktok"></ion-icon>
+                        </a>
+                        <a href="https://instagram.com/username_kamu" target="_blank" class="logo-footer">
+                            <ion-icon name="logo-linkedin"></ion-icon>
+                        </a>
+                    </div>
+                </div>
+            </div>
+        </footer>
+   
+    <!-- <div class="container-fluid mt-3 mb-3">
+        <div class="row justify-content-center">
+            <div class="col-11 col-md-6">
+                <div class="card footer border-0 shadow-sm p-4 mt-5" >
+                    <div class="card-body d-flex flex-column align-items-center justify-content-center">
+                        <h6 class="" style="font-size: 0.9rem; opacity: 0.7; color: var(--text-color);">
+                            &copy; Copyright Khaisan All Rights Reserved
+                        </h6>
+                        <div class="linked mt-3">
+                            <a href="https://instagram.com/username_kamu" target="_blank" class="logo-footer text-white">
+                                <ion-icon name="logo-instagram"></ion-icon>
+                            </a>
+                            <a href="https://tiktok.com/@username" target="_blank" class="logo-footer text-white">
+                                <ion-icon name="logo-tiktok"></ion-icon>
+                            </a>
+                            <a href="https://linkedin.com/in/username" target="_blank" class="logo-footer text-white">
+                                <ion-icon name="logo-linkedin"></ion-icon>
+                            </a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div> -->
+  
     <script src="assets/bootstrap/js/bootstrap.bundle.min.js"></script>
     <script>
         const text = "Hi, I'm Khaisan Ramzi Muzhaffar";
@@ -111,37 +175,11 @@
             }
         }
 
-        fetch("./navbar.html")
-            .then((response) => response.text())
-            .then((data) => {
-                document.getElementById("navbar-placeholder").innerHTML = data;
-                
-                const currentLocation = window.location.pathname.split("/").pop();
-                const navLinks = document.querySelectorAll(".nav-link");
-
-                navLinks.forEach((link) => {
-                    const href = link.getAttribute("href");
-                    if (href === currentLocation || (currentLocation === "" && href === "index.html")) {
-                        link.classList.add("active");
-                    }
-                });
-
-                window.addEventListener("scroll", function () {
-                    const navbar = document.querySelector(".navbar");
-                    if (navbar) {
-                        if (window.scrollY > 50) {
-                            navbar.classList.add("navbar-scrolled shadow-sm");
-                        } else {
-                            navbar.classList.remove("navbar-scrolled shadow-sm");
-                        }
-                    }
-                });
-            });
-
-        document.addEventListener("DOMContentLoaded", typeText);
+      
     </script>
 
     <script type="module" src="https://unpkg.com/ionicons@7.1.0/dist/ionicons/ionicons.esm.js"></script>
     <script nomodule src="https://unpkg.com/ionicons@7.1.0/dist/ionicons/ionicons.js"></script>
+    <script src="script.js"></script>
 </body>
 </html>

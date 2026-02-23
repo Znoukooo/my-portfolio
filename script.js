@@ -67,3 +67,22 @@ function updateIcon(theme, icon) {
 
 // Pastikan fungsi mengetik kamu tetap terpanggil
 document.addEventListener("DOMContentLoaded", typeText);
+
+// Tambahkan logika ini di script.js
+document.addEventListener('click', function (e) {
+    // Mencari apakah elemen yang diklik memiliki class .btn-view-image
+    const trigger = e.target.closest('.btn-view-image');
+    
+    if (trigger) {
+        // Mengambil path gambar dari atribut data-bs-img
+        const imagePath = trigger.getAttribute('data-bs-img');
+        
+        // Mengambil elemen gambar di dalam modal
+        const modalImage = document.getElementById('img-modal-target');
+        
+        if (modalImage) {
+            // Mengganti src gambar modal dengan gambar yang diklik
+            modalImage.src = imagePath;
+        }
+    }
+});

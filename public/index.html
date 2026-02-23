@@ -1,0 +1,147 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>KhaisanDEV</title>
+    <link rel="icon" type="image/png" href="./assets/img/logo-icon.png" />
+
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link href="https://fonts.googleapis.com/css2?family=Inter:ital,opsz,wght@0,14..32,100..900;1,14..32,100..900&family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap" rel="stylesheet" />
+    <link rel="stylesheet" href="assets/bootstrap/css/bootstrap.min.css" />
+
+    <style>
+        :root {
+            --text-color: #05050a;
+            --background-color: #f4f5fb;
+            --primary-color: #3940d0;
+            --secondary-color: #767cef;
+            --accent-color: #424bfa;
+        }
+
+        * { font-family: "Inter", Roboto, sans-serif; }
+
+        .navbar-brand, .nav-link {
+            font-weight: 600;
+            color: var(--text-color);
+        }
+
+        /* 1. Efek Garis Bawah HANYA untuk link biasa (Bukan Dropdown) */
+        .nav-link:not(.dropdown-toggle) {
+            position: relative;
+            transition: color 0.3s ease;
+        }
+
+        .nav-link:not(.dropdown-toggle).active::after,
+        .nav-link:not(.dropdown-toggle):hover::after {
+            content: "";
+            position: absolute;
+            width: 100%;
+            height: 2px;
+            background-color: var(--primary-color);
+            bottom: -5px;
+            left: 0;
+            transition: 0.3s;
+        }
+
+        /* 2. Pastikan Social Media (Dropdown) tidak punya efek garis bawah agar tidak geser */
+        .nav-link.dropdown-toggle::after {
+            content: none !important; /* Hapus garis bawah custom */
+        }
+
+        /* Profil & Typing */
+        .profile-img { border-radius: 25px; width: 100%; max-width: 300px; height: auto; }
+        .ies { font-weight: 800; }
+        .grayscale-hover { filter: grayscale(100%); transition: filter 0.5s ease-in-out; cursor: pointer; }
+        .grayscale-hover:hover { filter: grayscale(0%); }
+        .cursor { display: inline-block; background-color: var(--primary-color); width: 2px; margin-left: 4px; animation: blink 1s infinite; height: 1.2em; vertical-align: bottom; }
+
+        @keyframes blink { 0%, 50%, 100% { opacity: 1; } 25%, 75% { opacity: 0; } }
+
+        @media (max-width: 768px) {
+            .ies { font-size: 1.5rem; }
+            .navbar-nav .nav-link { padding: 10px 0; border-bottom: 1px solid #eee; }
+            .dropdown-menu { text-align: center; background-color: #f9f9f9; }
+        }
+
+        .dropdown-menu { animation: fadeIn 0.3s ease-in-out; }
+        @keyframes fadeIn { from { opacity: 0; transform: translateY(10px); } to { opacity: 1; transform: translateY(0); } }
+    </style>
+</head>
+<body>
+    <div id="navbar-placeholder"></div>
+
+    <div class="container">
+        <div class="row align-items-center mt-2 mt-lg-5 p-3">
+            <div class="col-md-6 order-1 order-md-1 text">
+                <h1 class="ies mb-3">
+                    <span class="highlight" id="typing-text"></span><span class="cursor">|</span>
+                </h1>
+                <p class="mb-4" style="text-align: justify">
+                    Software Engineering graduate and Computer Science student with
+                    backend development experience at the Ministry of Law and Human
+                    Rights (Kemenkumham). Expert in building internal management systems
+                    using PHP, MySQL, and Git to improve operational efficiency. Possess
+                    strong problem-solving skills and accustomed to working in technical
+                    teams. Committed to applying web development and system design
+                    expertise to support the scalability of corporate IT infrastructure.
+                </p>
+                <div class="d-flex justify-content-center justify-content-md-start">
+                    <a href="about.php" class="btn btn-outline-dark">Learn More</a>
+                </div>
+            </div>
+            <div class="col-md-6 order-2 order-md-2 d-flex justify-content-center mt-4 mt-md-0">
+                <img src="./assets/img/profile-img.jpeg" alt="Profile Image" class="profile-img grayscale-hover" />
+            </div>
+        </div>
+    </div>
+
+    <script src="assets/bootstrap/js/bootstrap.bundle.min.js"></script>
+    <script>
+        const text = "Hi, I'm Khaisan Ramzi Muzhaffar";
+        const typingElement = document.getElementById("typing-text");
+        let index = 0;
+
+        function typeText() {
+            if (index < text.length) {
+                typingElement.innerHTML += text.charAt(index);
+                index++;
+                setTimeout(typeText, 100);
+            }
+        }
+
+        fetch("./navbar.html")
+            .then((response) => response.text())
+            .then((data) => {
+                document.getElementById("navbar-placeholder").innerHTML = data;
+                
+                const currentLocation = window.location.pathname.split("/").pop();
+                const navLinks = document.querySelectorAll(".nav-link");
+
+                navLinks.forEach((link) => {
+                    const href = link.getAttribute("href");
+                    if (href === currentLocation || (currentLocation === "" && href === "index.html")) {
+                        link.classList.add("active");
+                    }
+                });
+
+                window.addEventListener("scroll", function () {
+                    const navbar = document.querySelector(".navbar");
+                    if (navbar) {
+                        if (window.scrollY > 50) {
+                            navbar.classList.add("navbar-scrolled shadow-sm");
+                        } else {
+                            navbar.classList.remove("navbar-scrolled shadow-sm");
+                        }
+                    }
+                });
+            });
+
+        document.addEventListener("DOMContentLoaded", typeText);
+    </script>
+
+    <script type="module" src="https://unpkg.com/ionicons@7.1.0/dist/ionicons/ionicons.esm.js"></script>
+    <script nomodule src="https://unpkg.com/ionicons@7.1.0/dist/ionicons/ionicons.js"></script>
+</body>
+</html>

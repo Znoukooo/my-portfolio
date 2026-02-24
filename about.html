@@ -1,0 +1,301 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>KhaisanDEV</title>
+    <link rel="icon" type="image/png" href="./assets/img/logo-icon.png" />
+
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link href="https://fonts.googleapis.com/css2?family=Inter:ital,opsz,wght@0,14..32,100..900;1,14..32,100..900&family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap" rel="stylesheet" />
+    <link rel="stylesheet" href="assets/bootstrap/css/bootstrap.min.css" />
+    <link rel="stylesheet" href="style.css">
+    <style>
+       
+
+        .text-gradient{
+            /* Mengambil warna dari variabel :root Anda */
+        background: linear-gradient(90deg, var(--accent-color), var(--secondary-color));
+        
+        /* Trik Clipping Text */
+        -webkit-background-clip: text;
+        -webkit-text-fill-color: transparent;
+        background-clip: text;
+        color: transparent; /* Fallback jika browser tidak support webkit */
+        
+        font-weight: 800;
+        display: inline-block;
+    
+        }
+
+        [data-theme="dark"] body{
+            background-color: var(--background-dark);
+        } 
+        
+        [data-theme="dark"] .port{
+            color: var(--text-dark);
+        }
+
+        .footer {
+    background-color: var(--apa);
+    border-radius: 10px; /* Membuat sudut card melengkung halus */
+}
+
+.logo-footer {
+    color: var(--text-color) !important; /* Supaya icon jadi putih di atas background biru */
+    margin: 0 10px;
+    text-decoration: none;
+    font-size: 22px;
+    transition: 0.3s;
+}
+
+.logo-footer:hover {
+    opacity: 0.7;
+    transform: translateY(-3px); /* Efek melayang sedikit saat hover */
+}
+[data-theme="dark"] .footer{
+    background-color: var(--ape) !important;
+    color: var(--text-dark) !important;
+}
+[data-theme="dark"] .copyright{
+    color: var(--text-dark) !important;
+}
+[data-theme="dark"] .logo-footer{
+    color: var(--text-dark) !important;
+    opacity: 0.6;
+}
+
+ /* Profil & Typing */
+ .profile-img { 
+    border-radius: 10px; /* Diubah dari 10px menjadi 0px agar kotak sempurna */
+    width: 100%; 
+    max-width: 400px; 
+    height: 400px; /* Tambahkan height yang sama dengan max-width agar rasio 1:1 */
+    object-fit: cover; /* Tambahkan ini agar gambar tidak gepeng saat dipaksa kotak */
+}
+        .ies { 
+            font-weight: 800; 
+        }
+        .grayscale-hover { 
+            filter: grayscale(100%); 
+            transition: filter 0.5s ease-in-out; 
+            cursor: pointer; 
+        }
+        .grayscale-hover:hover { 
+            filter: grayscale(0%); 
+        }
+        .cursor { 
+            display: inline-block; 
+            background-color: var(--primary-color); 
+            width: 2px; margin-left: 4px; 
+            animation: blink 1s infinite; 
+            height: 1.2em; 
+            vertical-align: bottom; }
+
+        @keyframes blink { 
+            0%, 50%, 100% { 
+                opacity: 1; 
+            } 25%, 75% { 
+                opacity: 0; 
+            } 
+        }
+
+        /* animate */
+        /* 1. Definisikan gerakan animasi */
+        @keyframes fadeInUp {
+    from {
+        opacity: 0;
+        transform: translateY(30px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+@keyframes fadeInLeft {
+    from {
+        opacity: 0;
+        transform: translateX(-30px);
+    }
+    to {
+        opacity: 1;
+        transform: translateX(0);
+    }
+}
+
+/* Pastikan elemen tersembunyi sepenuhnya sebelum ada class .show */
+.animate-up, .animate-left {
+    opacity: 0;
+    visibility: hidden; /* Tambahan agar tidak bisa diklik sebelum muncul */
+    transition: opacity 0.6s ease-out, transform 0.6s ease-out;
+}
+
+.animate-up.show, .animate-left.show {
+    opacity: 1;
+    visibility: visible;
+}
+
+/* Variasi Delay agar muncul bergantian */
+.delay-1 { animation-delay: 0.2s; }
+.delay-2 { animation-delay: 0.4s; }
+.delay-3 { animation-delay: 0.6s; }
+
+.about{
+    color: var(--text-color);
+
+}
+.parag{
+    color: var(--text-color) !important;
+}
+[data-theme="dark"] .parag{
+    color: var(--text-dark) !important;
+}
+[data-theme="dark"] body{
+    background-color: var(--background-dark) !important;
+}
+.cv{
+    background-color: var(--primary-color);
+    color: white;
+    font-weight: 600;
+    border-radius: 10px;
+    transition: 0.3s;
+}
+.cv:hover{
+    background-color: var(--secondary-color);
+    color: white;
+    transform: translateY(-3px);
+    box-shadow: 0 5px 15px rgba(85, 73, 195, 0.3);
+}
+.icon{
+    font-size: 20px; /* Ukuran disesuaikan agar proporsional dengan teks */
+    display: flex;
+}
+.my-work{
+    font-weight: 700;
+    color: var(--primary-color) !important;
+    transition: 0.3s;
+    border-color: var(--primary-color) !important;
+}
+.my-work:hover{
+    font-weight: 700;
+    color: var(--secondary-color) !important;
+    border-color: var(--secondary-color) !important;
+    transform: translateY(-3px);
+    
+}
+
+@media (max-width: 576px) {
+    /* Membuat tombol memenuhi lebar layar di mobile agar lebih mudah diklik (UX) */
+    .d-flex.flex-wrap .btn {
+        width: 100%;
+        justify-content: center;
+    }
+    
+    /* Menyesuaikan margin container agar pas di tengah */
+    .d-flex.flex-wrap {
+        padding: 0 10px;
+    }
+}
+
+/* Memastikan transisi smooth saat resize */
+.btn {
+    transition: all 0.3s ease;
+}
+    </style>
+</head>
+<body>
+    <div id="navbar-placeholder"></div>
+
+    <div class="container">
+        <div class="row align-items-center mt-4 mt-lg-5 mb-lg-3 mb-3 p-3">
+            <div class="col-12 order-1 order-md-1 text-center animate-up">
+                <h1 class="text-gradient">About me</h1>
+                <p class="port" style="opacity: 0.5;">I am a full stack web developer.</p>
+            </div>
+           
+        </div>
+       
+        <div class="row">
+            <div class="col-md-6 order-first order-md-last text text-center text-md-start animate-up p-3 about" style="text-align: justify !important;">
+                <h6 style="font-weight: 500; opacity: 0.5;">HELLO THERE</h6>
+                <h1 style="font-weight: 700;" class="text-gradient ">Hi, I'm Khaisan - a full stack developer who prioritizes beauty and user convenience.</h1>
+                <div class="parag">
+                    <p style="opacity: 0.6;" >Hi, I'm Khaisan Ramzi Muzhaffar, a tech enthusiast driven by the intersection of logic and creativity. My journey started with backend development, where I developed room reservation and monitoring systems at Kemenkumham.</p>
+                    <p style="opacity: 0.6;">I am bridging the gap between robust backend functionality and intuitive user experiences by diving deep into UI/UX Design. I enjoy solving complex problems and turning ideas into functional, beautiful websites</p>
+                </div>
+                <div class="d-flex flex-wrap justify-content-center justify-content-md-start gap-3 animate-up delay-3 w-100">
+                    <a href="portfolio.html" class="btn my-work px-3 py-2 d-inline-flex align-items-center justify-content-center m-0">
+                        View My Work
+                        <ion-icon name="arrow-forward-outline" class="icon ms-2"></ion-icon>
+                    </a>
+                    <a href="https://drive.google.com/file/d/1Z0LupobHDD9ECfAdiUvJD7F5S69KwEGL/view?usp=sharing" 
+                       class="btn cv px-3 py-2 d-inline-flex align-items-center justify-content-center m-0" target="_blank">
+                        Download My CV
+                        <ion-icon name="download-outline" class="icon ms-2"></ion-icon>
+                    </a>
+                </div>
+            </div>
+            <div class="col-md-6 order-last order-md-first d-flex justify-content-center mt-1 mt-md-0 p-4 animate-up">
+                <img src="./assets/img/about-me.jpeg" alt="Profile Image" class="profile-img grayscale-hover" />
+            </div>
+        </div>
+    </div>
+    
+  
+
+    <!-- footer -->
+
+    <footer class="container-fluid mt-5 animate-up">
+        <div class="row">
+            <div class="col-12 footer d-flex flex-column align-items-center justify-content-center py-4">
+                <h6 class="mb-2 mt-3 copyright" style="font-size: 0.9rem; opacity: 0.7; color: var(--text-color);">&copy; Copyright Khaisan All Rights Reserved</h6>
+                <div class="linked mt-4">
+                    <a href="https://www.instagram.com/khaisnn._?igsh=MXIweW4yM3hvZWhlbg==&utm_source=ig_contact_invite" target="_blank" class="logo-footer">
+                        <ion-icon name="logo-instagram"></ion-icon>
+                    </a>
+                    <a href=" https://www.tiktok.com/@yourxsann?_r=1&_t=ZS-93mAy09SxQi" target="_blank" class="logo-footer">
+                        <ion-icon name="logo-tiktok"></ion-icon>
+                    </a>
+                    <a href="https://www.linkedin.com/in/khaisan-ramzi-278681313?utm_source=share&utm_campaign=share_via&utm_content=profile&utm_medium=android_app" target="_blank" class="logo-footer">
+                        <ion-icon name="logo-linkedin"></ion-icon>
+                    </a>
+                </div>
+            </div>
+        </div>
+    </footer>
+    <script src="assets/bootstrap/js/bootstrap.bundle.min.js"></script>
+    <script>
+      // 1. Definisikan Options terlebih dahulu
+    const observerOptions = {
+        threshold: 0.2 // Animasi jalan jika 20% elemen terlihat
+    };
+
+    const observer = new IntersectionObserver((entries) => {
+        entries.forEach((entry) => {
+            if (entry.isIntersecting) {
+                entry.target.classList.add("show");
+                
+                // Cek jika ada elemen typing-text di dalamnya
+                const typingElement = entry.target.querySelector("#typing-text");
+                if (typingElement && typeof typeText === "function") {
+                    typeText();
+                }
+            }
+        });
+    }, observerOptions);
+
+    // 2. Jalankan observer setelah halaman dimuat
+    document.addEventListener("DOMContentLoaded", () => {
+        const animatedElements = document.querySelectorAll(".animate-up, .animate-left");
+        animatedElements.forEach((el) => observer.observe(el));
+    });
+    </script>
+
+    <script type="module" src="https://unpkg.com/ionicons@7.1.0/dist/ionicons/ionicons.esm.js"></script>
+    <script nomodule src="https://unpkg.com/ionicons@7.1.0/dist/ionicons/ionicons.js"></script>
+    <script src="./script.js"></script>
+</body>
+</html>
+

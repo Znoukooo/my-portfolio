@@ -22,10 +22,14 @@ fetch("./navbar.html")
     window.addEventListener("scroll", function () {
         const navbar = document.querySelector(".navbar");
         if (navbar) {
-            if (window.scrollY > 50) {
+            if (window.scrollY > 10) { // Angka 10 agar efek langsung terasa saat scroll sedikit
                 navbar.classList.add("navbar-scrolled", "shadow-sm");
+                // Opsional: Jika ingin warna background berubah saat scroll (misal dari transparan ke solid)
+                navbar.style.backgroundColor = "var(--background-color)"; 
             } else {
                 navbar.classList.remove("navbar-scrolled", "shadow-sm");
+                // Kembalikan ke warna awal jika perlu
+                navbar.style.backgroundColor = "transparent"; 
             }
         }
     });
@@ -86,3 +90,5 @@ document.addEventListener('click', function (e) {
         }
     }
 });
+
+// footer

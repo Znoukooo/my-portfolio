@@ -6,7 +6,7 @@
     --primary-color: #5549c3;
     --secondary-color: #887ee9;
     --accent-color: #5d4ef6;
-    --apa: rgb(246, 245, 248);
+    --apa: rgb(241, 241, 242);
   }
   
   /* Dark Mode Variables */
@@ -136,4 +136,28 @@
 /* Pastikan dropdown toggle tetap terlihat oke */
 .nav-link.dropdown-toggle.show {
     opacity: 1;
+}
+
+/* Pastikan pembungkus navbar tidak menghalangi sticky */
+#navbar-placeholder {
+    position: sticky;
+    top: 0;
+    z-index: 1020; /* Agar di atas konten lain */
+}
+
+.navbar {
+    background-color: var(--background-color); /* Berikan warna dasar */
+    transition: all 0.3s ease;
+    top: 0;
+    width: 100%;
+}
+
+/* Transisi halus saat di-scroll (menggunakan class dari script.js kamu) */
+.navbar-scrolled {
+    background-color: var(--background-color) !important;
+    backdrop-filter: blur(10px); /* Efek blur modern */
+}
+
+[data-theme="dark"] .navbar-scrolled {
+    background-color: var(--ape) !important;
 }

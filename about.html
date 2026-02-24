@@ -203,6 +203,89 @@
 .btn {
     transition: all 0.3s ease;
 }
+
+.about-text{
+    text-align: justify;
+}
+
+@media (max-width: 576px) {
+    .about-text{
+        text-align: justify;
+        margin: 15px 10px;
+    }
+}
+
+/* Container ikon */
+.icon-box-tech {
+    width: 60px;
+    height: 60px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background-color: var(--apa);
+    border-radius: 50px;
+    overflow: hidden; /* Memastikan gambar tidak keluar kotak */
+    padding: 10px;    /* Memberi ruang napas untuk logo */
+}
+
+/* Mengatur ukuran logo gambar agar tidak besar */
+.icon-box-tech img {
+    width: 120%;
+    height: 120%;
+    object-fit: contain; /* Menjaga rasio logo agar tidak gepeng */
+}
+
+@media (max-width: 576px) {
+    .card.tech-card h5 {
+        font-size: 0.9rem;
+        margin-bottom: 5px !important;
+
+    }
+    .card.tech-card .card-text {
+        font-size: 0.7rem !important;
+        display: -webkit-box;
+        -webkit-line-clamp: 3; /* Limits text to 3 lines on mobile */
+        -webkit-box-orient: vertical;
+        overflow: hidden;
+        color: var(--text-color);
+        opacity: 0.6;
+    }
+    .icon-box-tech {
+        width: 45px;
+        height: 45px;
+        margin-bottom: 10px !important;
+        
+    }
+}
+
+.card{
+    background-color: var(--apa);
+}
+[data-theme="dark"] .card{
+    background-color: var(--ape);
+}
+[data-theme="dark"] .card h5{
+        /* Mengambil warna dari variabel :root Anda */
+        background: linear-gradient(90deg, var(--accent-color), var(--secondary-color));
+        
+        /* Trik Clipping Text */
+        -webkit-background-clip: text;
+        -webkit-text-fill-color: transparent;
+        background-clip: text;
+        color: transparent; /* Fallback jika browser tidak support webkit */
+        
+        font-weight: 800;
+        display: inline-block;
+}
+[data-theme="dark"] .card-text{
+       color: var(--text-dark);
+       opacity: 0.5 !important;
+}
+
+[data-theme="dark"] .icon-box-tech {
+    background-color: rgba(255, 255, 255, 0.08);
+    border-radius: 50px;
+}
     </style>
 </head>
 <body>
@@ -218,12 +301,12 @@
         </div>
        
         <div class="row">
-            <div class="col-md-6 order-first order-md-last text text-center text-md-start animate-up p-3 about" style="text-align: justify !important;">
+            <div class="col-md-6 order-first order-md-last text text-center text-md-start animate-up p-3 about">
                 <h6 style="font-weight: 500; opacity: 0.5;">HELLO THERE</h6>
                 <h1 style="font-weight: 700;" class="text-gradient ">Hi, I'm Khaisan - a full stack developer who prioritizes beauty and user convenience.</h1>
                 <div class="parag">
-                    <p style="opacity: 0.6;" >Hi, I'm Khaisan Ramzi Muzhaffar, a tech enthusiast driven by the intersection of logic and creativity. My journey started with backend development, where I developed room reservation and monitoring systems at Kemenkumham.</p>
-                    <p style="opacity: 0.6;">I am bridging the gap between robust backend functionality and intuitive user experiences by diving deep into UI/UX Design. I enjoy solving complex problems and turning ideas into functional, beautiful websites</p>
+                    <p style="opacity: 0.6;" class="about-text">Hi, I'm Khaisan Ramzi Muzhaffar, a tech enthusiast driven by the intersection of logic and creativity. My journey started with backend development, where I developed room reservation and monitoring systems at Kemenkumham.</p>
+                    <p style="opacity: 0.6;" class="about-text">I am bridging the gap between robust backend functionality and intuitive user experiences by diving deep into UI/UX Design. I enjoy solving complex problems and turning ideas into functional, beautiful websites</p>
                 </div>
                 <div class="d-flex flex-wrap justify-content-center justify-content-md-start gap-3 animate-up delay-3 w-100">
                     <a href="portfolio.html" class="btn my-work px-3 py-2 d-inline-flex align-items-center justify-content-center m-0">
@@ -239,6 +322,121 @@
             </div>
             <div class="col-md-6 order-last order-md-first d-flex justify-content-center mt-1 mt-md-0 p-4 animate-up">
                 <img src="./assets/img/about-me.jpeg" alt="Profile Image" class="profile-img grayscale-hover" />
+            </div>
+        </div>
+
+        <div class="row justify-content-center g-4 mx-2">
+            <div class="col-6 col-md-6 col-lg-3 d-flex justify-content-center animate-up">
+                <div class="card tech-card shadow-sm border-0 h-100 w-100 tech-card">
+                    <div class="card-body text-center p-4">
+                        <div class="icon-box-tech mb-3 mx-auto">
+                            <img src="./assets/img/Node.js_logo.svg.webp" alt="Node.js Logo">
+                        </div>
+                        <h5 class="fw-bold mb-2">Node.JS</h5>
+                        <p class="card-text opacity-75" style="font-size: 0.9rem;">Building scalable and efficient server-side architectures for modern web applications using JavaScript.</p>
+                    </div>
+                </div>
+            </div>
+        
+            <div class="col-6 col-md-6 col-lg-3 d-flex justify-content-center animate-up">
+                <div class="card shadow-sm border-0 h-100 w-100 tech-card">
+                    <div class="card-body text-center p-4">
+                        <div class="icon-box-tech mb-3 mx-auto">
+                            <img src="./assets/img//mysql-logo.svg" alt="Node.js Logo">
+                        </div>
+                        <h5 class="fw-bold mb-2">MYSQL</h5>
+                        <p class="card-text opacity-75" style="font-size: 0.9rem;">Designing and managing structured relational databases for secure and fast application data storage.</p>
+                    </div>
+                </div>
+            </div>
+        
+            <div class="col-6 col-md-6 col-lg-3 d-flex justify-content-center animate-up">
+                <div class="card shadow-sm border-0 h-100 w-100 tech-card">
+                    <div class="card-body text-center p-4">
+                        <div class="icon-box-tech mb-3 mx-auto">
+                            <img src="./assets/img/PHP-logo.svg.png" alt="Node.js Logo">
+                        </div>
+                        <h5 class="fw-bold mb-2">PHP</h5>
+                        <p class="card-text opacity-75" style="font-size: 0.9rem;">A primary language I use to build dynamic and reliable internal management systems.</p>
+                    </div>
+                </div>
+            </div>
+            <div class="col-6 col-md-6 col-lg-3 d-flex justify-content-center animate-up">
+                <div class="card shadow-sm border-0 h-100 w-100 tech-card">
+                    <div class="card-body text-center p-4">
+                        <div class="icon-box-tech mb-3 mx-auto">
+                            <img src="./assets/img/codeigniter-logo.svg" alt="Node.js Logo">
+                        </div>
+                        <h5 class="fw-bold mb-2">Codeigniter 4</h5>
+                        <p class="card-text opacity-75" style="font-size: 0.9rem;">Accelerating web development with a lightweight, high-performance PHP framework.</p>
+                    </div>
+                </div>
+            </div>
+            <div class="col-6 col-md-6 col-lg-3 d-flex justify-content-center animate-up">
+                <div class="card shadow-sm border-0 h-100 w-100 tech-card">
+                    <div class="card-body text-center p-4">
+                        <div class="icon-box-tech mb-3 mx-auto">
+                            <img src="./assets/img/supabase_icon-logo_brandlogos.net_nmv8t-512x521.png" alt="Node.js Logo">
+                        </div>
+                        <h5 class="fw-bold mb-2">Supabase</h5>
+                        <p class="card-text opacity-75" style="font-size: 0.9rem;">Implementing Backend-as-a-Service (BaaS) for real-time database integration and instant user authentication.</p>
+                    </div>
+                </div>
+            </div>
+            <div class="col-6 col-md-6 col-lg-3 d-flex justify-content-center animate-up">
+                <div class="card shadow-sm border-0 h-100 w-100 tech-card">
+                    <div class="card-body text-center p-4">
+                        <div class="icon-box-tech mb-3 mx-auto">
+                            <img src="./assets/img/Octicons-mark-github.svg" alt="Node.js Logo">
+                        </div>
+                        <h5 class="fw-bold mb-2">GitHub</h5>
+                        <p class="card-text opacity-75" style="font-size: 0.9rem;">Efficiently managing code version control and team collaboration to ensure organized development workflows.</p>
+                    </div>
+                </div>
+            </div>
+            <div class="col-6 col-md-6 col-lg-3 d-flex justify-content-center animate-up">
+                <div class="card shadow-sm border-0 h-100 w-100 tech-card">
+                    <div class="card-body text-center p-4">
+                        <div class="icon-box-tech mb-3 mx-auto">
+                            <img src="./assets/img/HTML5_logo_and_wordmark.svg.png" alt="Node.js Logo">
+                        </div>
+                        <h5 class="fw-bold mb-2">HTML 5</h5>
+                        <p class="card-text opacity-75" style="font-size: 0.9rem;">Constructing semantic and standardized web structures to support accessibility and SEO optimization.</p>
+                    </div>
+                </div>
+            </div>
+            <div class="col-6 col-md-6 col-lg-3 d-flex justify-content-center animate-up">
+                <div class="card shadow-sm border-0 h-100 w-100 tech-card">
+                    <div class="card-body text-center p-4">
+                        <div class="icon-box-tech mb-3 mx-auto">
+                            <img src="./assets/img/CSS3_logo_and_wordmark.svg.png" alt="Node.js Logo">
+                        </div>
+                        <h5 class="fw-bold mb-2">CSS3</h5>
+                        <p class="card-text opacity-75" style="font-size: 0.9rem;">Adding modern, responsive visual touches and layouts to ensure an optimal user interface.</p>
+                    </div>
+                </div>
+            </div>
+            <div class="col-6 col-md-6 col-lg-3 d-flex justify-content-center animate-up">
+                <div class="card shadow-sm border-0 h-100 w-100 tech-card">
+                    <div class="card-body text-center p-4">
+                        <div class="icon-box-tech mb-3 mx-auto">
+                            <img src="./assets/img/Laravel.svg.png" alt="Node.js Logo">
+                        </div>
+                        <h5 class="fw-bold mb-2">Laravel</h5>
+                        <p class="card-text opacity-75" style="font-size: 0.9rem;">Utilizing the most popular PHP framework to build feature-rich web applications with elegant code.</p>
+                    </div>
+                </div>
+            </div>
+            <div class="col-6 col-md-6 col-lg-3 d-flex justify-content-center animate-up">
+                <div class="card shadow-sm border-0 h-100 w-100 tech-card">
+                    <div class="card-body text-center p-4">
+                        <div class="icon-box-tech mb-3 mx-auto">
+                            <img src="./assets/img/Bootstrap_logo.svg.png" alt="Node.js Logo">
+                        </div>
+                        <h5 class="fw-bold mb-2">Bootstrap 5</h5>
+                        <p class="card-text opacity-75" style="font-size: 0.9rem;">Speeding up the creation of mobile-first responsive web designs with the most reliable CSS framework.</p>
+                    </div>
+                </div>
             </div>
         </div>
     </div>

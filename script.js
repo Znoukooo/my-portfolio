@@ -65,7 +65,7 @@ function updateIcon(theme, icon) {
         icon.style.color = '#f1c40f';
     } else {
         icon.setAttribute('name', 'moon');
-        icon.style.color = '#5549c3';
+        icon.style.color = '#267fd9';
     }
 }
 

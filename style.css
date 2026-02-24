@@ -1,21 +1,21 @@
 @import url("https://fonts.googleapis.com/css2?family=Inter:ital,opsz,wght@0,14..32,100..900;1,14..32,100..900&family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap");
 :root {
     /* Light Mode (Existing) */
-    --text-color: #0d0d10;
-    --background-color: #f7f6fa;
-    --primary-color: #5549c3;
-    --secondary-color: #887ee9;
-    --accent-color: #5d4ef6;
+    --text-color: #070c12;
+    --background-color: #fafcfe;
+    --primary-color: #267fd9;
+    --secondary-color: #84bbf3;
+    --accent-color: #4ba2fa;
     --apa: rgb(241, 241, 242);
   }
   
   /* Dark Mode Variables */
   [data-theme="dark"] {
-    --text-dark: #eeeef1;
-    --background-dark: #07050a;
-    --primary-dark: #483cb4;
-    --secondary-dark: #211683;
-    --accent-dark: #1709ae;
+    --text-dark: #edf2f8;
+    --background-dark: #010304;
+    --primary-dark: #267fd9;
+    --secondary-dark: #0c4279;
+    --accent-dark: #055cb3;
     --ape: #131116; /* Menjadi --ape sesuai request */
   }
   
@@ -160,4 +160,19 @@
 
 [data-theme="dark"] .navbar-scrolled {
     background-color: var(--ape) !important;
+}
+
+.text-gradient{
+    /* Mengambil warna dari variabel :root Anda */
+background: linear-gradient(90deg, var(--accent-color), var(--secondary-color));
+
+/* Trik Clipping Text */
+-webkit-background-clip: text;
+-webkit-text-fill-color: transparent;
+background-clip: text;
+color: transparent; /* Fallback jika browser tidak support webkit */
+
+font-weight: 800;
+
+
 }

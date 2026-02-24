@@ -171,17 +171,21 @@
 
 /* Style Button */
 .btn-send {
-    background-color: var(--primary-color);
-    color: white;
+    background: linear-gradient(90deg, var(--accent-color), var(--secondary-color));
+    color: var(--background-color);
+    
     font-weight: 600;
-    border-radius: 10px;
+    border-radius: 5px;
     transition: 0.3s;
+    -webkit-background-clip: background;
+-webkit-background-fill-color: transparent;
+background-clip: background;
 }
 [data-theme="dark"] .btn-send {
-    background-color: var(--primary-dark);
-    color: white;
+    background: linear-gradient(90deg, var(--accent-color), var(--secondary-color));
+    color: var(--background-color);
     font-weight: 600;
-    border-radius: 10px;
+    border-radius: 5px;
     transition: 0.3s;
 }
 
@@ -229,7 +233,7 @@
     
             <div class="col-12 col-lg-5">
                 <div class="contact p-4 p-md-5 shadow-sm h-100">
-                    <h2 class="contact-info">Contact Info</h2>
+                    <h2 class="contact-info text-gradient">Contact Info</h2>
                     <p class="paragraf-info">This is information about me.</p>
                     
                     <div class="card bg-transparent border-0 my-4">
@@ -239,7 +243,7 @@
                                     <ion-icon name="call-outline"></ion-icon>
                                 </div>
                                 <div class="ap">
-                                    <h5 class="fw-bold mb-1">Phone Number</h5>
+                                    <h5 class="fw-bold mb-1 text-gradient">Phone Number</h5>
                                     <p class="mb-0 opacity-75">+62-821-2343-8174</p>
                                 </div>
                             </div>
@@ -251,7 +255,7 @@
                                     <ion-icon name="mail-outline"></ion-icon>
                                 </div>
                                 <div class="ap">
-                                    <h5 class="fw-bold mb-1">Email Address</h5>
+                                    <h5 class="fw-bold mb-1 text-gradient">Email Address</h5>
                                     <p class="mb-0 opacity-75 text-break">khaisanramzimuzhaffar12466@gmail.com</p>
                                 </div>
                             </div>
@@ -262,7 +266,7 @@
                                     <ion-icon name="calendar-clear-outline"></ion-icon>
                                 </div>
                                 <div class="ap">
-                                    <h5 class="fw-bold mb-1">Birth</h5>
+                                    <h5 class="fw-bold mb-1 text-gradient">Birth</h5>
                                     <p class="mb-0 opacity-75 text-break">23 October 2006</p>
                                 </div>
                             </div>
@@ -273,7 +277,7 @@
                                     <ion-icon name="logo-github"></ion-icon>
                                 </div>
                                 <div class="ap">
-                                    <h5 class="fw-bold mb-1">GitHub</h5>
+                                    <h5 class="fw-bold mb-1 text-gradient">GitHub</h5>
                                     <p class="mb-0 opacity-75 text-break">Znoukooo</p>
                                 </div>
                             </div>
@@ -284,7 +288,7 @@
             
             <div class="col-12 col-lg-7">
                 <div class="contact p-4 p-md-5 shadow-sm h-100">
-                    <h2 class="contact-info">Get In Touch</h2>
+                    <h2 class="contact-info text-gradient">Get In Touch</h2>
                     <p class="paragraf-info">Send me a message or give me suggestions.</p>
                     <div class="card bg-transparent border-0 mt-4">
                         <form action="https://formspree.io/f/xqedgvga" method="POST">

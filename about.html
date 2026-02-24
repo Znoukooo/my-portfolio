@@ -278,13 +278,170 @@
         display: inline-block;
 }
 [data-theme="dark"] .card-text{
-       color: var(--text-dark);
+       color: var(--text-dark) !important;
        opacity: 0.5 !important;
 }
 
 [data-theme="dark"] .icon-box-tech {
     background-color: rgba(255, 255, 255, 0.08);
     border-radius: 50px;
+}
+
+
+
+/* Ensure card content stays centered */
+.tech-card .card-body {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+}
+
+/* Timeline Styles */
+.timeline-container {
+    padding: 60px 0;
+    position: relative;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+    align-items: flex-start; /* Memastikan semua teks mulai dari titik yang sama di atas */
+}
+
+.timeline-line {
+    position: absolute;
+    top: 72px; 
+    left: 0;
+    right: 0;
+    height: 1px;
+    background-color: rgba(255, 255, 255, 0.1);
+    z-index: 1;
+}
+
+.timeline-item {
+    position: relative;
+    z-index: 2;
+    flex: 1; /* Memberikan ruang yang sama rata untuk tiap item */
+    min-width: 180px; /* Mencegah item terlalu sempit di desktop */
+    padding: 0 15px; /* Memberi jarak antar kolom teks */
+    box-sizing: border-box;
+}
+
+.timeline-dot {
+    width: 20px;
+    height: 20px;
+    background-color: #0d6efd; /* Sesuaikan dengan warna primer anda */
+    border: 4px solid #121b22; /* Sesuaikan dengan background dark anda */
+    border-radius: 50%;
+    margin-bottom: 15px;
+    box-shadow: 0 0 0 4px rgba(13, 110, 253, 0.2);
+}
+
+.timeline-year {
+    font-size: 0.8rem;
+    opacity: 0.6;
+    margin-bottom: 5px;
+    color: var(--text-color) !important;
+}
+
+.timeline-title {
+    font-size: 1rem;
+    font-weight: 600;
+    margin-bottom: 8px;
+    line-height: 1.4;
+    min-height: 3em; /* Menjaga agar deskripsi di bawahnya tetap sejajar meskipun judul hanya 1 baris */
+    color: var(--text-color) !important;
+}
+
+.timeline-desc {
+    font-size: 0.85rem;
+    opacity: 0.5;
+    line-height: 1.6;
+    color: var(--text-color) !important;
+}
+
+[data-theme="dark"] .timeline-year{
+    color: var(--text-dark) !important;
+    opacity: 0.5;
+}
+[data-theme="dark"] .timeline-title{
+    color: var(--text-dark) !important;
+    
+}
+[data-theme="dark"] .timeline-desc{
+    color: var(--text-dark) !important;
+    
+}
+
+/* Quote Styles */
+.quote-section {
+    padding: 80px 20px;
+}
+
+.quote-text {
+    font-size: 2.2rem;
+    font-weight: 300;
+    max-width: 900px;
+    margin: 0 auto;
+    line-height: 1.4;
+    color: var(--text-dark);
+}
+
+@media (max-width: 767px) {
+    .timeline-item {
+        flex: 0 0 50%;
+        max-width: 50%;
+        padding: 20px 10px;
+        text-align: center;
+    }
+    .timeline-title {
+        min-height: unset; /* Di mobile teks terpusat, tidak perlu min-height kaku */
+    }
+
+    .timeline-container {
+        justify-content: center; /* Menjaga item tetap di tengah */
+        padding: 40px 0;
+    }
+
+    .timeline-dot {
+        margin: 0 auto 15px auto;
+    }
+
+    .timeline-line {
+        display: none;
+    }
+
+    /* Adjusting the Quote for better spacing */
+    .quote-text {
+        font-size: 1.4rem;
+        padding: 0 10px;
+    }
+
+    
+}
+
+/* Maintain Horizontal line on Desktop */
+@media (min-width: 768px) {
+    .timeline-item {
+        flex: 1;
+        text-align: left;
+    }
+}
+
+@media (max-width: 576px) {
+    .line{
+        width: 100% !important;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+    }
+}
+
+.line{
+    width: 100%;
+    height: 2px;
+    background-color: var(--text-color) !important;
+    margin-bottom: -40px;
+    opacity: 0.1 !important;
 }
     </style>
 </head>
@@ -334,6 +491,7 @@
                         </div>
                         <h5 class="fw-bold mb-2">Node.JS</h5>
                         <p class="card-text opacity-75" style="font-size: 0.9rem;">Building scalable and efficient server-side architectures for modern web applications using JavaScript.</p>
+                        
                     </div>
                 </div>
             </div>
@@ -438,9 +596,78 @@
                     </div>
                 </div>
             </div>
+            <div class="col-6 col-md-6 col-lg-3 d-flex justify-content-center animate-up">
+                <div class="card shadow-sm border-0 h-100 w-100 tech-card">
+                    <div class="card-body text-center p-4">
+                        <div class="icon-box-tech mb-3 mx-auto">
+                            <img src="./assets/img/Figma-logo.svg" alt="Node.js Logo">
+                        </div>
+                        <h5 class="fw-bold mb-2">Figma</h5>
+                        <p class="card-text opacity-75" style="font-size: 0.9rem;">Designing intuitive and aesthetic user interfaces with a focus on seamless user experiences and modern design standards.</p>
+                    </div>
+                </div>
+            </div>
+            <div class="col-6 col-md-6 col-lg-3 d-flex justify-content-center animate-up">
+                <div class="card shadow-sm border-0 h-100 w-100 tech-card">
+                    <div class="card-body text-center p-4">
+                        <div class="icon-box-tech mb-3 mx-auto">
+                            <img src="./assets/img/Python-logo-notext.svg.webp" alt="Node.js Logo">
+                        </div>
+                        <h5 class="fw-bold mb-2">Python</h5>
+                        <p class="card-text opacity-75" style="font-size: 0.9rem;">Leveraging Python for data processing and engineering tasks to build efficient back-end logic and automation scripts.</p>
+                    </div>
+                </div>
+            </div>
         </div>
     </div>
     
+    <div class="container">
+        <div class="line mt-5"></div>
+    </div>
+
+    <div class="container mt-5">
+        <div class="row">
+            <div class="col-12"> 
+                <div class="timeline-container">
+                    <div class="timeline-line"></div>
+                    
+                    <div class="timeline-item animate-up">
+                        <div class="timeline-dot"></div>
+                        <div class="timeline-year">June 2021</div>
+                        <div class="timeline-title">Entering Vocational High School</div>
+                        <p class="timeline-desc">Software Engineering At SMK Al Amanah.</p>
+                    </div>
+            
+                    <div class="timeline-item animate-up">
+                        <div class="timeline-dot"></div>
+                        <div class="timeline-year">March 2022 - May 2022</div>
+                        <div class="timeline-title">Internship at the Ministry of Law and Human Rights</div>
+                        <p class="timeline-desc">As Backend Developer.</p>
+                    </div>
+            
+                    <div class="timeline-item animate-up">
+                        <div class="timeline-dot"></div>
+                        <div class="timeline-year">June 2024</div>
+                        <div class="timeline-title">Graduated from Vocational High School</div>
+                        <p class="timeline-desc">Graduated with an average grade of 84.38.</p>
+                    </div>
+            
+                    <div class="timeline-item animate-up">
+                        <div class="timeline-dot"></div>
+                        <div class="timeline-year">September 2024 - Now (Expected to graduate in 2028)</div>
+                        <div class="timeline-title">Pamulang University Students</div>
+                        <p class="timeline-desc">Informatics Engineering.</p>
+                    </div>
+                </div>
+            
+                <div class="quote-section text-center animate-up">
+                    <h2 class="quote-text">
+                        "Never give up even when you are down, do your best, do it until other people see you succeed."
+                    </h2>
+                </div>
+            </div>
+        </div>
+    </div>
   
 
     <!-- footer -->

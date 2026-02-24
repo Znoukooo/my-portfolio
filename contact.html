@@ -105,10 +105,19 @@
 
 .contact-info{
     color: var(--text-color) !important;
+    font-weight: 700;
 }
 .paragraf-info{
     color: var(--text-color) !important;
-    opacity: 0.8;
+    opacity: 0.6;
+}
+[data-theme="dark"] .contact-info{
+    color: var(--text-dark) !important;
+    font-weight: 700;
+}
+[data-theme="dark"] .paragraf-info{
+    color: var(--text-dark) !important;
+    opacity: 0.6;
 }
 
 .icon-box {
@@ -122,6 +131,7 @@
     flex-shrink: 0; /* Mencegah ikon mengecil jika teks panjang */
     text-decoration: none !important;
     color: var(--primary-color);
+    font-size: 25px;
 }
 
 [data-theme="dark"] .icon-box {
@@ -135,6 +145,10 @@
 
 .ap{
     color: var(--text-color);
+    opacity: 0.7;
+}
+[data-theme="dark"] .ap{
+    color: var(--text-dark);
     opacity: 0.7;
 }
 
@@ -163,9 +177,22 @@
     border-radius: 10px;
     transition: 0.3s;
 }
+[data-theme="dark"] .btn-send {
+    background-color: var(--primary-dark);
+    color: white;
+    font-weight: 600;
+    border-radius: 10px;
+    transition: 0.3s;
+}
 
 .btn-send:hover {
     background-color: var(--secondary-color);
+    color: white;
+    transform: translateY(-3px);
+    box-shadow: 0 5px 15px rgba(85, 73, 195, 0.3);
+}
+[data-theme="dark"] .btn-send:hover {
+    background-color: var(--secondary-dark);
     color: white;
     transform: translateY(-3px);
     box-shadow: 0 5px 15px rgba(85, 73, 195, 0.3);
@@ -174,7 +201,11 @@
 /* Penyesuaian Dark Mode */
 [data-theme="dark"] .custom-input {
     background-color: rgba(255, 255, 255, 0.05) !important;
-    color: #fff !important;
+    color: var(--background-color) !important;
+}
+[data-theme="dark"] .custom-input::placeholder {
+   opacity: 0.5;
+    color: var(--background-color) !important;
 }
 
 /* Perbaikan Text Break untuk Email Panjang */
@@ -201,7 +232,7 @@
                     <h2 class="contact-info">Contact Info</h2>
                     <p class="paragraf-info">This is information about me.</p>
                     
-                    <div class="card bg-transparent border-0 mt-4">
+                    <div class="card bg-transparent border-0 my-4">
                         <a href="https://wa.me/62821234338174" class="text-decoration-none contact-item mb-4" target="_blank">
                             <div class="d-flex align-items-start">
                                 <div class="icon-box me-3">
@@ -214,7 +245,7 @@
                             </div>
                         </a>
                     
-                        <a href="mailto:khaisanramzimuzhaffar12466@gmail.com" class="text-decoration-none contact-item" target="_blank">
+                        <a href="mailto:khaisanramzimuzhaffar12466@gmail.com" class="text-decoration-none contact-item mb-4" target="_blank">
                             <div class="d-flex align-items-start">
                                 <div class="icon-box me-3">
                                     <ion-icon name="mail-outline"></ion-icon>
@@ -222,6 +253,28 @@
                                 <div class="ap">
                                     <h5 class="fw-bold mb-1">Email Address</h5>
                                     <p class="mb-0 opacity-75 text-break">khaisanramzimuzhaffar12466@gmail.com</p>
+                                </div>
+                            </div>
+                        </a>
+                        <a href="#" class="text-decoration-none contact-item mb-4" target="_blank">
+                            <div class="d-flex align-items-start">
+                                <div class="icon-box me-3">
+                                    <ion-icon name="calendar-clear-outline"></ion-icon>
+                                </div>
+                                <div class="ap">
+                                    <h5 class="fw-bold mb-1">Birth</h5>
+                                    <p class="mb-0 opacity-75 text-break">23 October 2006</p>
+                                </div>
+                            </div>
+                        </a>
+                        <a href="https://github.com/Znoukooo" class="text-decoration-none contact-item mb-4" target="_blank">
+                            <div class="d-flex align-items-start">
+                                <div class="icon-box me-3">
+                                    <ion-icon name="logo-github"></ion-icon>
+                                </div>
+                                <div class="ap">
+                                    <h5 class="fw-bold mb-1">GitHub</h5>
+                                    <p class="mb-0 opacity-75 text-break">Znoukooo</p>
                                 </div>
                             </div>
                         </a>

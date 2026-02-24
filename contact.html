@@ -137,20 +137,64 @@
     color: var(--text-color);
     opacity: 0.7;
 }
+
+/* Style Input Form */
+.custom-input {
+    background-color: var(--background-color) !important;
+    border: 1px solid rgba(255, 255, 255, 0.1) !important;
+    color: var(--text-color) !important;
+    padding: 12px 15px;
+    border-radius: 8px;
+    transition: 0.3s;
+    resize: none;
+}
+
+.custom-input:focus {
+    background-color: rgba(255, 255, 255, 0.08) !important;
+    border-color: var(--primary-color) !important;
+    box-shadow: none !important;
+}
+
+/* Style Button */
+.btn-send {
+    background-color: var(--primary-color);
+    color: white;
+    font-weight: 600;
+    border-radius: 10px;
+    transition: 0.3s;
+}
+
+.btn-send:hover {
+    background-color: var(--secondary-color);
+    color: white;
+    transform: translateY(-3px);
+    box-shadow: 0 5px 15px rgba(85, 73, 195, 0.3);
+}
+
+/* Penyesuaian Dark Mode */
+[data-theme="dark"] .custom-input {
+    background-color: rgba(255, 255, 255, 0.05) !important;
+    color: #fff !important;
+}
+
+/* Perbaikan Text Break untuk Email Panjang */
+.text-break {
+    word-break: break-all;
+}
     </style>
 </head>
 <body>
     <div id="navbar-placeholder"></div>
 
     <div class="container">
-        <div class="row align-items-center mt-2 mt-lg-5 p-3">
+        <div class="row align-items-center mt-4 mt-lg-5 mb-lg-3 mb-3 p-3">
             <div class="col-12 order-1 order-md-1 text-center">
                 <h1 class="text-gradient">Contact</h1>
                 <p class="port" style="opacity: 0.5;">Contact me if needed.</p>
             </div>
            
         </div>
-        <div class="row justify-content-center g-4"> 
+        <div class="row justify-content-center g-4 mx-2"> 
     
             <div class="col-12 col-lg-5">
                 <div class="contact p-4 p-md-5 shadow-sm h-100">
@@ -189,8 +233,27 @@
                 <div class="contact p-4 p-md-5 shadow-sm h-100">
                     <h2 class="contact-info">Get In Touch</h2>
                     <p class="paragraf-info">Send me a message or give me suggestions.</p>
-                    <div class="card bg-transparent border-0">
-                        </div>
+                    <div class="card bg-transparent border-0 mt-4">
+                        <form action="https://formspree.io/f/xqedgvga" method="POST">
+                            <div class="row g-3">
+                                <div class="col-12 col-md-6">
+                                    <input type="text" class="form-control custom-input" placeholder="Your Name" name="name" required>
+                                </div>
+                                <div class="col-12 col-md-6">
+                                    <input type="email" class="form-control custom-input" placeholder="Your Email" name="email" required>
+                                </div>
+                                <div class="col-12">
+                                    <input type="text" class="form-control custom-input" placeholder="Subject" name="subject" required>
+                                </div>
+                                <div class="col-12">
+                                    <textarea class="form-control custom-input" rows="5" placeholder="Message" name="message" required></textarea>
+                                </div>
+                                <div class="col-12 text-center mt-4">
+                                    <button type="submit" class="btn btn-send px-5 py-2">Send Message</button>
+                                </div>
+                            </div>
+                        </form>
+                    </div>  
                 </div>
             </div>
         

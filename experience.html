@@ -66,32 +66,6 @@
     opacity: 0.6;
 }
 
- /* Profil & Typing */
- .profile-img { 
-    border-radius: 10px; /* Diubah dari 10px menjadi 0px agar kotak sempurna */
-    width: 100%; 
-    max-width: 400px; 
-    height: 400px; /* Tambahkan height yang sama dengan max-width agar rasio 1:1 */
-    object-fit: cover; /* Tambahkan ini agar gambar tidak gepeng saat dipaksa kotak */
-}
-        .ies { 
-            font-weight: 800; 
-        }
-        .grayscale-hover { 
-            filter: grayscale(100%); 
-            transition: filter 0.5s ease-in-out; 
-            cursor: pointer; 
-        }
-        .grayscale-hover:hover { 
-            filter: grayscale(0%); 
-        }
-        .cursor { 
-            display: inline-block; 
-            background-color: var(--primary-color); 
-            width: 2px; margin-left: 4px; 
-            animation: blink 1s infinite; 
-            height: 1.2em; 
-            vertical-align: bottom; }
 
         @keyframes blink { 
             0%, 50%, 100% { 
@@ -142,308 +116,7 @@
 .delay-2 { animation-delay: 0.4s; }
 .delay-3 { animation-delay: 0.6s; }
 
-.about{
-    color: var(--text-color);
 
-}
-.parag{
-    color: var(--text-color) !important;
-}
-[data-theme="dark"] .parag{
-    color: var(--text-dark) !important;
-}
-[data-theme="dark"] body{
-    background-color: var(--background-dark) !important;
-}
-.cv{
-    background-color: var(--primary-color);
-    color: white;
-    font-weight: 600;
-    border-radius: 10px;
-    transition: 0.3s;
-}
-.cv:hover{
-    background-color: var(--secondary-color);
-    color: white;
-    transform: translateY(-3px);
-    box-shadow: 0 5px 15px rgba(85, 73, 195, 0.3);
-}
-.icon{
-    font-size: 20px; /* Ukuran disesuaikan agar proporsional dengan teks */
-    display: flex;
-}
-.my-work{
-    font-weight: 700;
-    color: var(--primary-color) !important;
-    transition: 0.3s;
-    border-color: var(--primary-color) !important;
-}
-.my-work:hover{
-    font-weight: 700;
-    color: var(--secondary-color) !important;
-    border-color: var(--secondary-color) !important;
-    transform: translateY(-3px);
-    
-}
-
-@media (max-width: 576px) {
-    /* Membuat tombol memenuhi lebar layar di mobile agar lebih mudah diklik (UX) */
-    .d-flex.flex-wrap .btn {
-        width: 100%;
-        justify-content: center;
-    }
-    
-    /* Menyesuaikan margin container agar pas di tengah */
-    .d-flex.flex-wrap {
-        padding: 0 10px;
-    }
-}
-
-/* Memastikan transisi smooth saat resize */
-.btn {
-    transition: all 0.3s ease;
-}
-
-.about-text{
-    text-align: justify;
-}
-
-@media (max-width: 576px) {
-    .about-text{
-        text-align: center;
-        margin: 15px 10px;
-    }
-}
-
-/* Container ikon */
-.icon-box-tech {
-    width: 60px;
-    height: 60px;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    background-color: var(--apa);
-    border-radius: 50px;
-    overflow: hidden; /* Memastikan gambar tidak keluar kotak */
-    padding: 10px;    /* Memberi ruang napas untuk logo */
-}
-
-/* Mengatur ukuran logo gambar agar tidak besar */
-.icon-box-tech img {
-    width: 120%;
-    height: 120%;
-    object-fit: contain; /* Menjaga rasio logo agar tidak gepeng */
-}
-
-@media (max-width: 576px) {
-    .card.tech-card h5 {
-        font-size: 0.9rem;
-        margin-bottom: 5px !important;
-
-    }
-    .card.tech-card .card-text {
-        font-size: 0.7rem !important;
-        display: -webkit-box;
-        -webkit-line-clamp: 3; /* Limits text to 3 lines on mobile */
-        -webkit-box-orient: vertical;
-        overflow: hidden;
-        color: var(--text-color);
-        opacity: 0.6;
-        
-    }
-    .icon-box-tech {
-        width: 45px;
-        height: 45px;
-        margin-bottom: 10px !important;
-        
-    }
-}
-
-.card{
-    background-color: var(--apa);
-}
-[data-theme="dark"] .card{
-    background-color: var(--ape);
-}
-[data-theme="dark"] .card h5{
-        /* Mengambil warna dari variabel :root Anda */
-        background: linear-gradient(90deg, var(--accent-color), var(--secondary-color));
-        
-        /* Trik Clipping Text */
-        -webkit-background-clip: text;
-        -webkit-text-fill-color: transparent;
-        background-clip: text;
-        color: transparent; /* Fallback jika browser tidak support webkit */
-        
-        font-weight: 800;
-        display: inline-block;
-}
-[data-theme="dark"] .card-text{
-       color: var(--text-dark) !important;
-       opacity: 0.5 !important;
-}
-
-[data-theme="dark"] .icon-box-tech {
-    background-color: rgba(255, 255, 255, 0.08);
-    border-radius: 50px;
-}
-
-
-
-/* Ensure card content stays centered */
-.tech-card .card-body {
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    justify-content: center;
-}
-
-/* Timeline Styles */
-.timeline-container {
-    padding: 60px 0;
-    position: relative;
-    display: flex;
-    flex-wrap: wrap;
-    justify-content: space-between;
-    align-items: flex-start; /* Memastikan semua teks mulai dari titik yang sama di atas */
-}
-
-.timeline-line {
-    position: absolute;
-    top: 72px; 
-    left: 0;
-    right: 0;
-    height: 1px;
-    background-color: rgba(255, 255, 255, 0.1);
-    z-index: 1;
-}
-
-.timeline-item {
-    position: relative;
-    z-index: 2;
-    flex: 1; /* Memberikan ruang yang sama rata untuk tiap item */
-    min-width: 180px; /* Mencegah item terlalu sempit di desktop */
-    padding: 0 15px; /* Memberi jarak antar kolom teks */
-    box-sizing: border-box;
-}
-
-.timeline-dot {
-    width: 20px;
-    height: 20px;
-    background-color: var(--secondary-color); /* Sesuaikan dengan warna primer anda */
-    border: 4px solid var(--text-color); /* Sesuaikan dengan background dark anda */
-    border-radius: 50%;
-    margin-bottom: 15px;
-    box-shadow: 0 0 0 4px rgba(13, 110, 253, 0.2);
-}
-
-.timeline-year {
-    font-size: 0.8rem;
-    opacity: 0.6;
-    margin-bottom: 5px;
-    color: var(--text-color) !important;
-}
-
-.timeline-title {
-    font-size: 1rem;
-    font-weight: 600;
-    margin-bottom: 8px;
-    line-height: 1.4;
-    min-height: 3em; /* Menjaga agar deskripsi di bawahnya tetap sejajar meskipun judul hanya 1 baris */
-    color: var(--text-color) !important;
-}
-
-.timeline-desc {
-    font-size: 0.85rem;
-    opacity: 0.5;
-    line-height: 1.6;
-    color: var(--text-color) !important;
-}
-
-[data-theme="dark"] .timeline-year{
-    color: var(--text-dark) !important;
-    opacity: 0.5;
-}
-[data-theme="dark"] .timeline-title{
-    color: var(--text-dark) !important;
-    
-}
-[data-theme="dark"] .timeline-desc{
-    color: var(--text-dark) !important;
-    
-}
-
-/* Quote Styles */
-.quote-section {
-    padding: 80px 20px;
-}
-
-.quote-text {
-    font-size: 2.2rem;
-    font-weight: 300;
-    max-width: 900px;
-    margin: 0 auto;
-    line-height: 1.4;
-    
-}
-
-@media (max-width: 767px) {
-    .timeline-item {
-        flex: 0 0 50%;
-        max-width: 50%;
-        padding: 20px 10px;
-        text-align: center;
-    }
-    .timeline-title {
-        min-height: unset; /* Di mobile teks terpusat, tidak perlu min-height kaku */
-    }
-
-    .timeline-container {
-        justify-content: center; /* Menjaga item tetap di tengah */
-        padding: 40px 0;
-    }
-
-    .timeline-dot {
-        margin: 0 auto 15px auto;
-    }
-
-    .timeline-line {
-        display: none;
-    }
-
-    /* Adjusting the Quote for better spacing */
-    .quote-text {
-        font-size: 1.4rem;
-        padding: 0 10px;
-    }
-
-    
-}
-
-/* Maintain Horizontal line on Desktop */
-@media (min-width: 768px) {
-    .timeline-item {
-        flex: 1;
-        text-align: left;
-    }
-}
-
-@media (max-width: 576px) {
-    .line{
-        width: 100% !important;
-        display: flex;
-        align-items: center;
-        justify-content: center;
-    }
-}
-
-.line{
-    width: 100%;
-    height: 2px;
-    background-color: var(--text-color) !important;
-    margin-bottom: -40px;
-    opacity: 0.1 !important;
-}
     </style>
 </head>
 <body>
@@ -459,7 +132,38 @@
         </div>
     </div>
         
-  
+    <div class="container">
+        <div class="row justify-content-center g-4 mx-2 mt-4">
+            <div class="col-12 col-lg-12 align-items-center justify-content-center animate-up">
+                <div id="carouselExampleIndicators" class="carousel slide">
+                    <div class="carousel-indicators">
+                      <button type="button" data-bs-target="#carouselExampleIndicators" data-bs-slide-to="0" class="active" aria-current="true" aria-label="Slide 1"></button>
+                      <button type="button" data-bs-target="#carouselExampleIndicators" data-bs-slide-to="1" aria-label="Slide 2"></button>
+                      <button type="button" data-bs-target="#carouselExampleIndicators" data-bs-slide-to="2" aria-label="Slide 3"></button>
+                    </div>
+                    <div class="carousel-inner">
+                      <div class="carousel-item active">
+                        <img src="./assets/img/pkl/IMG-20230428-WA0226.jpg" class="d-block w-100" alt="...">
+                      </div>
+                      <div class="carousel-item">
+                        <img src="./assets/img/pkl/WhatsApp Image 2026-02-25 at 20.47.19.jpeg" class="d-block w-100" alt="...">
+                      </div>
+                      <div class="carousel-item">
+                        <img src="./assets/img/pkl/WhatsApp Image 2026-02-25 at 20.47.20.jpeg" class="d-block w-100" alt="...">
+                      </div>
+                    </div>
+                    <button class="carousel-control-prev" type="button" data-bs-target="#carouselExampleIndicators" data-bs-slide="prev">
+                      <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+                      <span class="visually-hidden">Previous</span>
+                    </button>
+                    <button class="carousel-control-next" type="button" data-bs-target="#carouselExampleIndicators" data-bs-slide="next">
+                      <span class="carousel-control-next-icon" aria-hidden="true"></span>
+                      <span class="visually-hidden">Next</span>
+                    </button>
+                  </div>
+            </div>
+        </div>
+    </div>
 
     <!-- footer -->
 

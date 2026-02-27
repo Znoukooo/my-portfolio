@@ -148,6 +148,51 @@
     border-radius: 8px;
     box-shadow: 0 5px 15px rgba(0,0,0,0.5);
 }
+
+/* Styling Card */
+.certificate-item {
+    background: var(--apa); /* Menggunakan variabel warna Anda */
+    border: none;
+    border-radius: 15px;
+    overflow: hidden;
+    transition: transform 0.3s ease;
+    height: 100%; /* Agar tinggi card sama dalam satu baris */
+}
+
+[data-theme="dark"] .certificate-item {
+    background-color: var(--ape) !important;
+}
+
+.certificate-item:hover {
+    transform: translateY(-5px);
+}
+
+/* Pastikan container gambar tetap konsisten di dalam card */
+.cert-img-wrapper {
+    width: 100%;
+    aspect-ratio: 4 / 3;
+    overflow: hidden;
+    cursor: pointer;
+}
+
+.cert-img-wrapper img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+
+.card-title-cert {
+    font-size: 0.95rem;
+    font-weight: 700;
+    margin-bottom: 5px;
+    color: inherit;
+}
+
+.card-text-cert {
+    font-size: 0.8rem;
+    opacity: 0.7;
+    margin-bottom: 0;
+}
     </style>
 </head>
 <body>
@@ -203,39 +248,127 @@
             </div>
         </div>
     
-        <div class="row g-3 animate-up">
-            <div class="col-6 col-lg-3">
-                <div class="cert-img-container" data-bs-toggle="modal" data-bs-target="#previewModal" data-bs-img="./assets/img/sertif/fintech_and_financial/fintech_and_financial_page-0001.jpg">
-                    <img src="./assets/img/sertif/fintech_and_financial/fintech_and_financial_page-0001.jpg" alt="Sertifikat 1">
+     
+            <div class="row g-4 animate-up">
+                <div class="col-6 col-lg-3">
+                    <div class="card certificate-item">
+                        <div class="cert-img-wrapper" data-bs-toggle="modal" data-bs-target="#previewModal" data-bs-img="./assets/img/sertif/fintech_and_financial/fintech_and_financial_page-0001.jpg">
+                            <img src="./assets/img/sertif/fintech_and_financial/fintech_and_financial_page-0001.jpg" alt="Fintech">
+                        </div>
+                        <div class="card-body p-3">
+                            <h5 class="card-title-cert port">Fintech & Financial</h5>
+                            <p class="card-text-cert port">Fundamental of Fintech Literacy</p>
+                        </div>
+                    </div>
+                </div>
+            
+                <div class="col-6 col-lg-3">
+                    <div class="card certificate-item">
+                        <div class="cert-img-wrapper" data-bs-toggle="modal" data-bs-target="#previewModal" data-bs-img="./assets/img/sertif/serti-seminar-web-development/serti seminar web development_page-0001.jpg">
+                            <img src="./assets/img/sertif/serti-seminar-web-development/serti seminar web development_page-0001.jpg" alt="Web Dev">
+                        </div>
+                        <div class="card-body p-3">
+                            <h5 class="card-title-cert port">Web Development</h5>
+                            <p class="card-text-cert port">National Seminar Web Technology</p>
+                        </div>
+                    </div>
+                </div>
+            
+                <div class="col-6 col-lg-3">
+                    <div class="card certificate-item">
+                        <div class="cert-img-wrapper" data-bs-toggle="modal" data-bs-target="#previewModal" data-bs-img="./assets/img/sertif/sertifikat_data_engineering/sertifikat_data_engineering_page-0001.jpg">
+                            <img src="./assets/img/sertif/sertifikat_data_engineering/sertifikat_data_engineering_page-0001.jpg" alt="Data Engineering">
+                        </div>
+                        <div class="card-body p-3">
+                            <h5 class="card-title-cert port">Data Engineering</h5>
+                            <p class="card-text-cert port">Introduction to Data Pipeline</p>
+                        </div>
+                    </div>
+                </div>
+            
+                <div class="col-6 col-lg-3">
+                    <div class="card certificate-item">
+                        <div class="cert-img-wrapper" data-bs-toggle="modal" data-bs-target="#previewModal" data-bs-img="./assets/img/sertif/sertifikat_FE_BE_WD/sertifikat_FE_BE_WD_page-0001.jpg">
+                            <img src="./assets/img/sertif/sertifikat_FE_BE_WD/sertifikat_FE_BE_WD_page-0001.jpg" alt="FE BE WD">
+                        </div>
+                        <div class="card-body p-3">
+                            <h5 class="card-title-cert port">Fullstack Web</h5>
+                            <p class="card-text-cert port">Frontend & Backend Development</p>
+                        </div>
+                    </div>
+                </div>
+            
+                <div class="col-6 col-lg-3">
+                    <div class="card certificate-item">
+                        <div class="cert-img-wrapper" data-bs-toggle="modal" data-bs-target="#previewModal" data-bs-img="./assets/img/sertif/sertifikat_khaisan/sertifikat_khaisan_page-0001.jpg">
+                            <img src="./assets/img/sertif/sertifikat_khaisan/sertifikat_khaisan_page-0001.jpg" alt="Sertifikat Khaisan">
+                        </div>
+                        <div class="card-body p-3">
+                            <h5 class="card-title-cert port">Course Achievement</h5>
+                            <p class="card-text-cert port">General IT Certification</p>
+                        </div>
+                    </div>
+                </div>
+            
+                <div class="col-6 col-lg-3">
+                    <div class="card certificate-item">
+                        <div class="cert-img-wrapper" data-bs-toggle="modal" data-bs-target="#previewModal" data-bs-img="./assets/img/sertif/sertifikat_kompetensi_khaisan_ramzi_muzhaffar/sertifikat_kompetensi_khaisan_ramzi_muzhaffar_page-0001.jpg">
+                            <img src="./assets/img/sertif/sertifikat_kompetensi_khaisan_ramzi_muzhaffar/sertifikat_kompetensi_khaisan_ramzi_muzhaffar_page-0001.jpg" alt="Kompetensi">
+                        </div>
+                        <div class="card-body p-3">
+                            <h5 class="card-title-cert port">Expertise Competence</h5>
+                            <p class="card-text-cert port">Software Engineering Competency</p>
+                        </div>
+                    </div>
+                </div>
+            
+                <div class="col-6 col-lg-3">
+                    <div class="card certificate-item">
+                        <div class="cert-img-wrapper" data-bs-toggle="modal" data-bs-target="#previewModal" data-bs-img="./assets/img/sertif/sertifikat_praktik_kerja_industri_khaisan_ramzi_muzhaffar/sertifikat_praktik_kerja_industri_khaisan_ramzi_muzhaffar_page-0001.jpg">
+                            <img src="./assets/img/sertif/sertifikat_praktik_kerja_industri_khaisan_ramzi_muzhaffar/sertifikat_praktik_kerja_industri_khaisan_ramzi_muzhaffar_page-0001.jpg" alt="PKL">
+                        </div>
+                        <div class="card-body p-3">
+                            <h5 class="card-title-cert port">Internship (PKL)</h5>
+                            <p class="card-text-cert port">Ministry of Law and Human Rights</p>
+                        </div>
+                    </div>
+                </div>
+            
+                <div class="col-6 col-lg-3">
+                    <div class="card certificate-item">
+                        <div class="cert-img-wrapper" data-bs-toggle="modal" data-bs-target="#previewModal" data-bs-img="./assets/img/sertif/sertifikat_seminar_18_desember/sertifikat_seminar_18_desember_page-0001.jpg">
+                            <img src="./assets/img/sertif/sertifikat_seminar_18_desember/sertifikat_seminar_18_desember_page-0001.jpg" alt="Seminar">
+                        </div>
+                        <div class="card-body p-3">
+                            <h5 class="card-title-cert port">IT Seminar</h5>
+                            <p class="card-text-cert port">Beyond Technical Skills</p>
+                        </div>
+                    </div>
+                </div>
+            
+                <div class="col-6 col-lg-3">
+                    <div class="card certificate-item">
+                        <div class="cert-img-wrapper" data-bs-toggle="modal" data-bs-target="#previewModal" data-bs-img="./assets/img/sertif/sertifikat_ui_ux/sertifikat_ui_ux_page-0001.jpg">
+                            <img src="./assets/img/sertif/sertifikat_ui_ux/sertifikat_ui_ux_page-0001.jpg" alt="UI/UX">
+                        </div>
+                        <div class="card-body p-3">
+                            <h5 class="card-title-cert port">UI/UX Design</h5>
+                            <p class="card-text-cert port">User Interface & Experience Design</p>
+                        </div>
+                    </div>
                 </div>
             </div>
-            <div class="col-6 col-lg-3">
-                <div class="cert-img-container" data-bs-toggle="modal" data-bs-target="#previewModal" data-bs-img="./assets/img/sertif/serti-seminar-web-development/serti seminar web development_page-0001.jpg">
-                    <img src="./assets/img/sertif/serti-seminar-web-development/serti seminar web development_page-0001.jpg" alt="Sertifikat 2">
-                </div>
-            </div>
-            <div class="col-6 col-lg-3">
-                <div class="cert-img-container" data-bs-toggle="modal" data-bs-target="#previewModal" data-bs-img="./assets/img/sertif/sertifikat_data_engineering/sertifikat_data_engineering_page-0001.jpg">
-                    <img src="./assets/img/sertif/sertifikat_data_engineering/sertifikat_data_engineering_page-0001.jpg" alt="Sertifikat 3">
-                </div>
-            </div>
-            <div class="col-6 col-lg-3">
-                <div class="cert-img-container" data-bs-toggle="modal" data-bs-target="#previewModal" data-bs-img="./assets/img/cert4.jpg">
-                    <img src="./assets/img/cert4.jpg" alt="Sertifikat 4">
-                </div>
-            </div>
-        </div>
     </div>
     
     <div class="modal fade" id="previewModal" tabindex="-1" aria-hidden="true">
-        <div class="modal-dialog modal-dialog-centered modal-lg">
-            <div class="modal-content">
-                <div class="modal-body p-0 text-center">
-                    <img src="" id="modalImage" class="img-fluid w-100" alt="Preview">
+        <div class="modal-dialog modal-dialog-centered modal-xl"> <div class="modal-content bg-transparent border-0">
+                <div class="modal-body p-0 text-center position-relative">
+                    <img src="" id="modalImage" class="img-fluid rounded" alt="Preview">
                     <button type="button" class="btn-close btn-close-white position-absolute top-0 end-0 m-3" data-bs-dismiss="modal" aria-label="Close"></button>
                 </div>
             </div>
         </div>
+    </div>
     </div>
     <!-- footer -->
 
